@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConfigComponent } from './config.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogRef } from '@angular/material/dialog';
 
 describe('ConfigComponent', () => {
   let component: ConfigComponent;
@@ -12,6 +13,9 @@ describe('ConfigComponent', () => {
       imports: [
         ConfigComponent,
         BrowserAnimationsModule
+      ],
+      providers: [
+        { provide: MatDialogRef, useValue: {} }
       ]
     })
       .compileComponents();
