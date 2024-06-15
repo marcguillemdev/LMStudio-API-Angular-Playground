@@ -10,12 +10,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MarkdownModule, MermaidAPI } from 'ngx-markdown';
 import { Subject, takeUntil } from 'rxjs';
 import { LMStudioCompletionChoice } from '../../interface/completion-response';
+import { LMStudioCompletionChoiceMessage } from '../../interface/completion-stream-response';
+import { ChatCompletionChunk, Choice } from '../../interface/event-stream-chunk';
 import { LMStudioModels } from '../../interface/model';
 import { HttpService } from '../../services/http.service';
 import { ConfigComponent } from '../config/config.component';
-import { LMStudioCompletionChoiceMessage } from '../../interface/completion-stream-response';
 import { DialogMessageComponent } from '../dialog-message/dialog-message.component';
-import { ChatCompletionChunk, Choice } from '../../interface/event-stream-chunk';
 import { LoadingComponent } from '../loading/loading.component';
 
 @Component({
