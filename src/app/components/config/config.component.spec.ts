@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConfigComponent } from './config.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ConfigComponent', () => {
   let component: ConfigComponent;
@@ -8,10 +9,13 @@ describe('ConfigComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConfigComponent]
+      imports: [
+        ConfigComponent,
+        BrowserAnimationsModule
+      ]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ConfigComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

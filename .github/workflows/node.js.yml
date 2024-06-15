@@ -26,11 +26,11 @@ jobs:
       # Instalar dependencias
       - name: Install dependencies
         # No ejecutar si se obtuvo node_modules de cache
-        if: steps.node-cache.outputs.cache-hit != 'true' 
+        if: steps.node-cache.outputs.cache-hit != 'true'
         run: npm install
       # Generar compilación de producción
       - name: Run Build command
         run: npm run build --configuration=production
       # Ejecutar pruebas unitarias
       - name: Run Unit tests
-        run: npm run test
+        run: npm run test-headless

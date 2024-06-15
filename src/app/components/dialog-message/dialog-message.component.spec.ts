@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DialogMessageComponent } from './dialog-message.component';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 describe('DialogMessageComponent', () => {
   let component: DialogMessageComponent;
@@ -8,10 +9,16 @@ describe('DialogMessageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DialogMessageComponent]
+      imports: [
+        DialogMessageComponent
+      ],
+      providers: [
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} }
+      ]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(DialogMessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
