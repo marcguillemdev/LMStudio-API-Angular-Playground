@@ -1,0 +1,27 @@
+<section>
+  <div class="sidenav">
+    <div class="header">
+      LM Studio API
+    </div>
+    <div class="content">
+      <mat-nav-list>
+        <button color="primary" mat-button (click)="addNewTab()">
+          <mat-icon>add</mat-icon>
+          New chat
+        </button>
+      </mat-nav-list>
+    </div>
+  </div>
+  <main>
+    <div class="header">
+      <mat-tab-group fitInkBarToContent>
+        @for (tab of tabs; track $index) {
+        <mat-tab [label]="tab">
+          <app-chat></app-chat>
+        </mat-tab>
+        }
+      </mat-tab-group>
+
+    </div>
+  </main>
+</section>

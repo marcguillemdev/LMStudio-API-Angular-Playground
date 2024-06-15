@@ -1,0 +1,30 @@
+:host {
+  & form {
+    & mat-dialog-actions {
+      display: flex;
+      justify-content: flex-end;
+
+      & div.spacer {
+        flex: 1;
+      }
+    }
+
+    & section {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      & div.form-field {
+        & h4 {
+          margin-block-start: 0;
+          /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+          margin-block-end: 0;
+        }
+
+        & ::ng-deep mat-form-field {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+:host {
+  & div.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1em;
+
+    & div.header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      & span {
+        font-weight: bold;
+        font-size: large;
+      }
+
+      & mat-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        margin: 0;
+      }
+    }
+
+    & hr {
+      width: 100%;
+      color: grey;
+    }
+
+    & div.body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+
+      & p {
+        margin: 0;
+      }
+    }
+
+    & div.footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 0.5em;
+      width: 100%;
+      margin-top: 0.5em;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<section>
+  <h1>Chat with loaded models from LMStudio API</h1>
+  <div class="wrapper">
+    <form [formGroup]="formGroup" (ngSubmit)="sendMessageAndReadEventStream()" class="mat-elevation-z8">
+      <div class="header">
+        <mat-form-field appearance="outline">
+          <mat-label>Select model</mat-label>
+          <mat-select formControlName="model">
+            @if (models && models.data) {
+            @for (model of models.data; track model) {
+            <mat-option [value]="model.id">{{model.id}}</mat-option>
+            }
+            } @else {
+            <mat-option disabled value="no-model">Loading models...</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <button mat-fab (click)="openSettings()" type="button">
+          <mat-icon>settings</mat-icon>
+        </button>
+      </div>
+      <div class="body">
+        <div class="body-wrapper" #bodyWrapper>
+          @for (message of messages; track message) {
+          <div [class.assistant]="message.message.role === 'assistant'" [class.user]="message.message.role === 'user'">
+            <span [class.assistant]="message.message.role === 'assistant'"
+              [class.user]="message.message.role === 'user'">
+              {{ message.message.role === 'assistant' ? 'Language model'
+              : '' }}
+            </span>
+            <markdown lineNumbers mermaid katex clipboard [mermaidOptions]="mermaidOptions"
+              [data]="message.message.content"></markdown>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="footer">
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="message" />
+        </mat-form-field>
+        <button mat-fab [color]="this.completedChatRequest ? 'primary' : 'warn'" aria-label="Send message"
+          [attr.submit]="completedChatRequest">
+          <mat-icon>{{ this.completedChatRequest ? 'chat' : 'stop' }}</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

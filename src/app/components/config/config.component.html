@@ -1,0 +1,43 @@
+<form [formGroup]="this.formGroup">
+  <h2 mat-dialog-title><strong>LMStudio API Settings</strong></h2>
+  <mat-dialog-content class="mat-typography">
+    <section>
+      <div class="form-field">
+        <h4>Host URL</h4>
+        <p>Where the LM Studio API is working</p>
+        <mat-form-field>
+          <input matInput placeholder="Example: http://localhost:1234" formControlName="host" />
+          <mat-error>URL API is required 😢</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <h4>System prompt</h4>
+        <p>Special messages used to steer the behavior of the AI.</p>
+        <mat-form-field>
+          <textarea matInput cdkTextareaAutosize placeholder="System prompt" formControlName="systemPrompt"></textarea>
+          <mat-error>System prompt is required 😢</mat-error>
+        </mat-form-field>
+      </div>
+    </section>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button color="accent" (click)="resetToDefaults()">
+      <mat-icon color="accent">
+        restart_alt
+      </mat-icon>
+      Reset
+    </button>
+    <div class="spacer">
+    </div>
+    <button color="warn" mat-button mat-dialog-close>
+      <mat-icon color="warn">
+        close
+      </mat-icon>
+      Cancel
+    </button>
+    <button color="primary" mat-button [mat-dialog-close]="true" (click)="setConfiguration()">
+      <mat-icon color="primary">save</mat-icon>
+      Save
+    </button>
+  </mat-dialog-actions>
+</form>

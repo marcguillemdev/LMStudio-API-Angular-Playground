@@ -1,0 +1,146 @@
+/* stylelint-disable selector-pseudo-element-no-unknown */
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+/* stylelint-disable selector-type-no-unknown */
+:host {
+  & section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+      text-align: center;
+    }
+
+    & div.wrapper {
+      & form {
+        overflow: hidden;
+        width: 800px;
+        height: 800px;
+        max-height: 800px;
+        max-width: 800px;
+        min-width: 0;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: rgba(160 160 160 / 10%);
+
+        & div.header {
+          width: calc(100% - 2em);
+          margin: 1em;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1em;
+
+          & mat-form-field {
+            width: 100%;
+          }
+        }
+
+        & div.body {
+          flex: 1;
+          background-color: white;
+          width: 100%;
+          overflow: hidden;
+          display: flex;
+
+          & div.body-wrapper {
+            flex: 1;
+            width: calc(100% - 2em);
+            margin: 1em;
+            align-items: center;
+            overflow: auto;
+
+            & div.assistant {
+              position: relative;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              margin-top: 1em;
+              margin-bottom: 1em;
+            }
+
+            & div.user {
+              margin-bottom: 1em;
+              margin-top: 1em;
+              position: relative;
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+            }
+
+            & span {
+              position: absolute;
+              font-size: 0.7em;
+
+              &.assistant {
+                top: -26px;
+                left: 8px;
+                padding: 7px;
+                background-color: rgb(219 219 219);
+                border-radius: 10px;
+              }
+
+              &.user {
+                top: -20px;
+                right: 0;
+              }
+            }
+
+            & markdown {
+              margin: 0;
+              overflow: overlay;
+              text-wrap: pretty;
+              padding: 0.7em;
+              border-radius: 10px;
+              background-color: rgba(160 160 160 / 10%);
+
+              & ::ng-deep {
+                & markdown-clipboard {
+                  & button {
+                    // Falta estilar este botón
+                    border-radius: 11px;
+                  }
+                }
+
+                & p {
+                  margin-block-start: 0;
+                  margin-block-end: 0;
+                }
+              }
+            }
+          }
+        }
+
+        & div.footer {
+          width: calc(100% - 2em);
+          margin: 1em;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 1em;
+
+          & mat-form-field {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  & ::ng-deep mat-form-field div.mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+/* div {
+  border: 1px solid red;
+}
+ */

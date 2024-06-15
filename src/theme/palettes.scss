@@ -1,0 +1,58 @@
+$black-color: #0000;
+$white-color: #ffff;
+$primary-palette: (
+  50: #e9f9ff,
+  100: #dfefff,
+  200: #d3e3f6,
+  300: #c0d0e3,
+  400: #9cabbe,
+  500: #7b8a9c,
+  600: #546374,
+  700: #415060,
+  800: #233241,
+  900: #001220,
+  A100: #b0d8ff,
+  A200: #7dc3ff,
+  A400: #4aaeff,
+  A700: #31a1ff,
+  contrast: (
+    50: $black-color,
+    100: $black-color,
+    200: $black-color,
+    300: $black-color,
+    400: $black-color,
+    500: $white-color,
+    600: $white-color,
+    700: $white-color,
+    800: $white-color,
+    900: $white-color,
+    A100: $black-color,
+    A200: $black-color,
+    A400: $black-color,
+    A700: $black-color
+  )
+);
+$accent-palette: (
+  50: #e8ecfb,
+  100: #c4cef6,
+  200: #9caef0,
+  300: #728fe6,
+  400: #5275dd,
+  500: #2c5cd3,
+  600: #2553c8,
+  700: #1849bb,
+  800: #0b3eaf,
+  900: #002c99,
+  contrast: (
+    50: $black-color,
+    100: $black-color,
+    200: $black-color,
+    300: $white-color,
+    400: $white-color,
+    500: $white-color,
+    600: $white-color,
+    700: $white-color,
+    800: $white-color,
+    900: $white-color
+  )
+);

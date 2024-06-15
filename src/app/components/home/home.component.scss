@@ -1,0 +1,47 @@
+:host {
+  & section {
+    display: flex;
+    height: 100%;
+
+    & div.sidenav {
+      background-color: #070a0a;
+      color: #fff;
+      min-width: 250px;
+
+      & div.header {
+        padding: 10px;
+        padding-top: 20px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      & div.content {
+        margin: 0 10px;
+
+        & button {
+          width: 100%;
+          color: white;
+        }
+      }
+    }
+
+    & main {
+      background-color: #131618;
+      color: #fff;
+      width: 100%;
+      padding: 20px;
+
+      & ::ng-deep mat-tab-group {
+        & mat-tab-header {
+          background-color: #131618;
+          color: #fff;
+        }
+
+        & span.mdc-tab__text-label {
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

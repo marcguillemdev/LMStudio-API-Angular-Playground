@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="header">
+    <span>{{ injectedMatDialogData.title }}</span>
+    <button mat-button (click)="closeDialogWithResponse(false)">
+      <mat-icon>
+        close
+      </mat-icon>
+    </button>
+  </div>
+  <hr>
+  <div class="body">
+    <p>
+      {{ injectedMatDialogData.message }}
+    </p>
+  </div>
+  <div class="footer">
+    <button mat-button color="warn" (click)="closeDialogWithResponse(false)">
+      <mat-icon>
+        close
+      </mat-icon>
+      Close
+    </button>
+    <button mat-button color="accent" (click)="closeDialogWithResponse(true)">
+      <mat-icon>
+        refresh
+      </mat-icon>
+      Retry
+    </button>
+  </div>
+</div>
