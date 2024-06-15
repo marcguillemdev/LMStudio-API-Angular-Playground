@@ -80,8 +80,10 @@ export class ChatComponent implements OnInit {
     this._matDialogService.open(ConfigComponent).afterClosed()
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe({
-        next: () => {
-          this._loadAvailableModels();
+        next: (response: boolean) => {
+          if (response) {
+            this._loadAvailableModels();
+          }
         }
       });
   }
@@ -103,10 +105,11 @@ export class ChatComponent implements OnInit {
           this._closeLoadingDialog();
           this._matDialogService.open(DialogMessageComponent,
             {
+              disableClose: true,
               data:
               {
                 title: 'LMStudio API not available',
-                message: 'The LMStudio API is not available. Please check your configuration or try again later.'
+                message: 'The LMStudio API is not available. Please check your configuration or try again later. <br> You have to start the LMStudio API server to use this application and set on the CORS policy option.'
               }
             }).afterClosed()
             .pipe(takeUntilDestroyed(this._destroyRef))
@@ -127,6 +130,8 @@ export class ChatComponent implements OnInit {
    */
   private _showLoadingDialog(): void {
     this._loadingDialogRef = this._matDialogService.open(LoadingComponent, {
+      hasBackdrop: true,
+      disableClose: true,
       data: {
         title: 'Loading...',
         message: 'Please wait while the model list is being loaded.'

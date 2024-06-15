@@ -9,9 +9,7 @@
   </div>
   <hr>
   <div class="body">
-    <p>
-      {{ injectedMatDialogData.message }}
-    </p>
+    <p [innerHTML]="injectedMatDialogData.message"></p>
   </div>
   <div class="footer">
     <button mat-button color="warn" (click)="closeDialogWithResponse(false)">

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -25,6 +25,7 @@ import { LMSTudioAPIConfiguration } from '../../interface/configuration';
 export class ConfigComponent {
 
   private readonly configService = inject(ConfigService);
+  private readonly matDialogRef = inject(MatDialogRef<ConfigComponent>);
   private readonly config: LMSTudioAPIConfiguration = this.configService.getConfiguration();
 
   public formGroup = new FormGroup({
@@ -36,9 +37,10 @@ export class ConfigComponent {
     this.formGroup.setValue(this.configService._defaultConfiguration);
   }
 
-  public setConfiguration(): void {
+  public setConfiguration(reloadModelsAfterCloseThisModal: boolean): void {
     if (this.formGroup.valid) {
       this.configService.setConfiguration(this.formGroup.value as LMSTudioAPIConfiguration);
+      this.matDialogRef.close(reloadModelsAfterCloseThisModal);
     }
   }
 
