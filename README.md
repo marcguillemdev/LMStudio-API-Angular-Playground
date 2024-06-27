@@ -50,4 +50,4 @@ You can change the **LM Studio API URL** and the **internal prompt** through the
 
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the **GPL-3.0 license**. See the LICENSE file for more details.
